@@ -1,12 +1,11 @@
 # Function.List (CheatEngine)
 
-<H6>Version: 1.0</H6>
+<H1>Version: 1.0</H1>
  - Add a System for Check if an Item was in the List
  - Add a System for Add and Item if it wasn't in the List
  - Add a System of parameters
 
-<H6>Tutorial:</H6><br>
-
+<H1>Tutorial:</H1><br>
 Function.List(Bool Is64BitsProcess, List myList, int myList.Lenght,IntPtr myList.Item)</br>
   - Is64BitsProcess = Needed for the actual index in List "Index+=4 for 32bits", "Index+=8 for 64bits" //0 = 32Bits, 1 = 64Bits
   - myList = Your Allocated List Address 
@@ -14,7 +13,7 @@ Function.List(Bool Is64BitsProcess, List myList, int myList.Lenght,IntPtr myList
   - myList.Item = Your Entity/Structure Address you wan't to Check and Add
   - call Function.List = Call The Function of List
 
-<H6>Example:</H6><br>
+<H1>Example:</H1><br>
   [Enable]</br>
   alloc(newmem,$1000)</br>
   alloc(Job.Recolt.List,14)</br>
