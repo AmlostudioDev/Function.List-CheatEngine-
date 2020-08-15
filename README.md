@@ -27,7 +27,7 @@ Function.List(Bool Is64BitsProcess, List myList, int myList.Lenght,IntPtr myList
   //Code needed for the List</br>
   mov [Is64BitsProcess],0</br>
   mov [myList],Job.Recolt.List</br>
-  mov [myList.Lenght],18</br>
+  mov [myList.Lenght],14</br>
   mov [myList.Item],eax</br>
   call Function.List</br>
   </br>
