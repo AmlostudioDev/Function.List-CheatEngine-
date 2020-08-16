@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>1</ID>
-      <Description>"Function.List( List myList, int myList.Lenght, IntPtr MyList.Item,bool Is64BitsProcess)"</Description>
+      <Description>"Function.List( List myList, int myList.Length, IntPtr MyList.Item,bool Is64BitsProcess)"</Description>
       <Options moHideChildren="1"/>
       <LastState/>
       <VariableType>Auto Assembler Script</VariableType>
@@ -17,14 +17,14 @@ alloc(List.Add,100)
 
 alloc(Is64BitsProcess,4)
 alloc(myList,8)
-alloc(myList.Lenght,4)
+alloc(myList.Length,4)
 alloc(myList.Item,8)
 
 registersymbol(List.CanAdd)
 registersymbol(Function.List)
 registersymbol(Is64BitsProcess)
 registersymbol(myList)
-registersymbol(myList.Lenght)
+registersymbol(myList.Length)
 registersymbol(myList.Item)
 
 label(End.CheckInList)
@@ -79,7 +79,8 @@ Function.List:
 
   mov [List.CanAdd],0
   mov [myList],0
-  mov [myList.Lenght],0
+  mov [myList.Length],0
+  mov [myList.Item],0
   ret
 
 
@@ -87,7 +88,7 @@ Function.List:
 List.Contains: // &lt;------------------------------------------|
 //While(ecx != 14)                                         //|
 //{                                                        //|
-   cmp ecx,[myList.Lenght]                                 //|
+   cmp ecx,[myList.Length]                                 //|
    je End.CheckInList // &gt;-------------------|               |
    cmp [edi+ecx],eax  //                     |               |
    je End.CheckInList2 // &gt;------------------|--------|      |
@@ -107,7 +108,7 @@ jmp List.Contains.End
 List.Add: // &lt;------------------------------------|
 //While(ecx != 14)                              //|
 //{                                             //|
-cmp ecx,[myList.Lenght]                         //|
+cmp ecx,[myList.Length]                         //|
 je List.Add.End                                 //|
 cmp [edi+ecx],0                                 //|
 jne End.Adder // &gt;-------|                        |
@@ -125,7 +126,7 @@ jmp List.Add.End
 [DISABLE]
 unregistersymbol(Function.List)
 unregistersymbol(myList)
-unregistersymbol(myList.Lenght)
+unregistersymbol(myList.Length)
 unregistersymbol(myList.Item)
 unregistersymbol(Is64BitsProcess)
 
@@ -133,7 +134,7 @@ dealloc(List.CanAdd)
 dealloc(List.Contains)
 dealloc(List.Add)
 dealloc(myList)
-dealloc(myList.Lenght)
+dealloc(myList.Length)
 dealloc(myList.Item)
 dealloc(Is64BitsProcess)
 dealloc(Function.List)
@@ -150,10 +151,10 @@ dealloc(Function.List)
         </CheatEntry>
         <CheatEntry>
           <ID>26</ID>
-          <Description>"myList.Lenght"</Description>
+          <Description>"myList.Length"</Description>
           <ShowAsHex>1</ShowAsHex>
           <VariableType>4 Bytes</VariableType>
-          <Address>myList.Lenght</Address>
+          <Address>myList.Length</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>28</ID>
